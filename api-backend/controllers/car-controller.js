@@ -25,6 +25,16 @@ exports.postCar=async (req, res)=>{
     
 }
 
-exports.carAvailable=async(req,res)=>{
-
+exports.getCars=async(req,res)=>{
+    try{
+        const cars=await Car.findAll({where: {
+            isAvailable: true
+        }
+        });
+        console.log("available cars",cars)
+        return res.status(200).json({"available cars":cars})
+    }
+    catch(err){
+        console.log(`Error fetching the cars`)
+    }
 }

@@ -23,4 +23,6 @@ module.exports = function(app) {
       [authJwt.verifyToken,authJwt.isAdmin],
       carController.postCar
     );
+
+    app.get('/api/test/getcars',carController.getCars)
   };
