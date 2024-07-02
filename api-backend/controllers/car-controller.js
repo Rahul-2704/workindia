@@ -16,11 +16,15 @@ exports.postCar=async (req, res)=>{
           rent_per_hr:req.body.rent_per_hr,
           rent_histor:req.body.rent_history
         });
-        res.status(200).send({ message: "Car posted Successfully."});
+        res.status(200).json({"message":"car added successfully","car_id":car.id})
     }
     catch(err){
         console.log(`Error posting car ${err}`)
         res.status(500).send({ message: error.message });
     }
     
+}
+
+exports.carAvailable=async(req,res)=>{
+
 }

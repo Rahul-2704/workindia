@@ -24,9 +24,11 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.JSON,
         defaultValue: [],
 
-      }
-      
-      
+      },
+      isAvailable: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: true, // Cars are available by default
+      },
     });
   
     return Car;
